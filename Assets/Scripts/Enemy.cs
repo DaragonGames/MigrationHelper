@@ -85,10 +85,7 @@ public class Enemy : MonoBehaviour
 
     private void RunOutOfDemands()
     {
-        if (GameManager.Instance.currentMission == GameManager.Mission.ResidentRegistration)
-        {
-            GameManager.Instance.currentMission = GameManager.Mission.ResidentPermit;
-        }
+        GameManager.NextMission();
         SceneManager.LoadScene("Home");
     }
 

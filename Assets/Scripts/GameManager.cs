@@ -33,15 +33,7 @@ public class GameManager : MonoBehaviour
            return;
         }  
 
-        if (currentMission == Mission.ResidentRegistration)
-        {
-            objectives = Objective.GetRegistration();
-        }
-        if (currentMission == Mission.ResidentPermit)
-        {
-            objectives = Objective.GetPermit();
-        }
-
+        SetMission(Mission.ResidentRegistration);
 
         if (ItemSpriteManager.list.Count == 0)
         {
@@ -58,6 +50,25 @@ public class GameManager : MonoBehaviour
     public bool checkRequirements(string requirement)
     {
         return Inventory.items.Contains(requirement);
+    }
+
+    public void SetMission(Mission mission)
+    {
+        if (mission == Mission.ResidentRegistration)
+        {
+            objectives = Objective.GetRegistration();
+            currentMission = mission;
+        }
+        if (mission == Mission.ResidentPermit)
+        {
+            objectives = Objective.GetPermit();
+            currentMission = mission;
+        }
+    }
+
+    public static void NextMission()
+    {
+        GameManager.Instance.SetMission(Mission.ResidentPermit);
     }
 
 }

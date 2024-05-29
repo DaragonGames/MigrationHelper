@@ -1881,6 +1881,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 395641388532725671, guid: 7ff4e4cad3ddc6641aa2622ff46bdc4f,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 2064fbace3c0ab74f884a0059705f4e0, type: 3}
+    - target: {fileID: 2520998491960181995, guid: 7ff4e4cad3ddc6641aa2622ff46bdc4f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588338927977509012, guid: 7ff4e4cad3ddc6641aa2622ff46bdc4f,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 36e80b93012ff8740a97b9601e056fbd, type: 3}
     - target: {fileID: 5528429377136202007, guid: 7ff4e4cad3ddc6641aa2622ff46bdc4f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1986,6 +2001,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 6735299342953969005, guid: 7ff4e4cad3ddc6641aa2622ff46bdc4f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ce3cfd33829a3145b760dcdb5aba47d,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
