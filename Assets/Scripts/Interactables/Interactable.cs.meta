@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d78c6366168f28345816cfce5e91e347
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - collectEffectPrefab: {fileID: 9092288446234522134, guid: 31a91a53c16686e40b1babe687f80c19,
+      type: 3}
+  - collectTextPrefab: {fileID: 2931109870068740886, guid: 31eacb4f738ca504c92ccdc153133927,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
