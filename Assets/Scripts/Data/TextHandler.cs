@@ -32,9 +32,7 @@ public class TextHandler : MonoBehaviour
 
     public static Dictionary<string, string> itemDescriptions = new Dictionary<string, string>();
     public static List<string> npcLines = new List<string>();
-    public static List<string> enemyLines = new List<string>();
     public static int npcLinesCount = 4;
-    public static int enemyLinesCount = 5;
 
     public static void LoadTexts()
     {
@@ -52,11 +50,5 @@ public class TextHandler : MonoBehaviour
         }
         Debug.Log("Done loading npc lines");
 
-        for (int i = 0;i < enemyLinesCount; i++)
-        {
-            string text = Resources.Load<TextAsset>("enemy-line-"+i).text;
-            enemyLines.Add(text);
-        }
-        Debug.Log("Done loading enemy lines");
     }
 }

@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     public enum Mission {ResidentRegistration , ResidentPermit};
     public Mission currentMission = Mission.ResidentRegistration;
     public static GameObject player;
+    public EnemyLines responseHandler = null;
 
     void Awake()
     {
+
         if (Instance == null)
         {
             Instance = this;
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour
         {
             TextHandler.LoadTexts();
         }
+            Debug.Log("Try this");
+            responseHandler = EnemyLines.LoadResponses();
     }
 
     public List<Objective> objectives = new List<Objective>();
