@@ -4,7 +4,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ItemCollectText : MonoBehaviour
+public class PopUpText : MonoBehaviour
 {
 
     private int positionID;
@@ -35,6 +35,6 @@ public class ItemCollectText : MonoBehaviour
     public void SetDisplayName(string displayName)
     {
         TMP_Text tmpText = GetComponentInChildren<TMP_Text>();
-        tmpText.text = "Collected: " + TextHandler.englishItemNames[displayName];
+        tmpText.text = displayName;
     }
 }

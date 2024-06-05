@@ -27,7 +27,11 @@ public class Door : Interactable
         if (GameManager.Instance.currentMission == GameManager.Mission.ResidentPermit 
         && !Inventory.items.Contains("health_insurance_proof"))
         {
-            CollectItem("health_insurance_proof");
+            CollectItem("health_insurance_proof", transform.position);
+        }
+        else
+        {
+            CreatePopUpMessage("There is no Mail");
         }
         doorUI.SetActive(false);
     } 
@@ -35,7 +39,7 @@ public class Door : Interactable
     public void GoToOffice()
     {
         doorUI.SetActive(false);
-        SceneManager.LoadScene("WaitingRoom");
+        TransitionScene.Load("GoingToOffice","WaitingRoom");
     }
 
     public void GoHome()

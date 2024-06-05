@@ -43,26 +43,33 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void CollectItem(string itemName)
+    public void CollectItem(string itemName, Vector3 position)
     {
         Inventory.items.Add(itemName);
 
-        GameObject obj = Instantiate(collectEffectPrefab, transform.position, Quaternion.identity);
-        obj.GetComponent<ItemCollectEffect>().SetPosition(transform.position, itemName);
+        GameObject obj = Instantiate(collectEffectPrefab, position, Quaternion.identity);
+        obj.GetComponent<ItemCollectEffect>().SetPosition(position, itemName);
 
-        obj = Instantiate(collectTextPrefab, new Vector3(0,0,0), Quaternion.identity);
-        obj.GetComponentInChildren<ItemCollectText>().SetDisplayName(itemName);
+        
+        string displayMessage = "Collected: " + TextHandler.englishItemNames[itemName];
+        CreatePopUpMessage(displayMessage);
     }
 
-    public void DelayedItemColletion(string itemName, float delay)
+    public void CreatePopUpMessage(string message) 
     {
-        StartCoroutine(CollectItemTimed(itemName, delay));
+        GameObject obj = Instantiate(collectTextPrefab, new Vector3(0,0,0), Quaternion.identity);
+        obj.GetComponentInChildren<PopUpText>().SetDisplayName(message);
     }
 
-    IEnumerator CollectItemTimed(string itemName, float delay)
+    public void DelayedItemColletion(string itemName, float delay, Vector3 position)
+    {
+        StartCoroutine(CollectItemTimed(itemName, delay, position));
+    }
+
+    IEnumerator CollectItemTimed(string itemName, float delay, Vector3 position)
     {
         yield return new WaitForSeconds(delay);
-        CollectItem(itemName);
+        CollectItem(itemName, position);
     }
 
     public virtual void Interact() {}

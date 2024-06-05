@@ -17,7 +17,7 @@ public class CollectableItem : Interactable
 
     public override void Interact() 
     {
-        CollectItem(itemName);
+        CollectItem(itemName, transform.position);
         if (!isContainer)
         {
             Destroy(gameObject);

@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public static GameObject player;
     public EnemyLines responseHandler = null;
 
+    public bool gameOver = false;
+
     void Awake()
     {
 
@@ -72,7 +74,15 @@ public class GameManager : MonoBehaviour
 
     public static void NextMission()
     {
-        GameManager.Instance.SetMission(Mission.ResidentPermit);
+        if (Instance.currentMission == Mission.ResidentPermit)
+        {
+            Instance.gameOver = true;
+        }
+        else
+        {
+            GameManager.Instance.SetMission(Mission.ResidentPermit);
+        }
+
     }
 
 }

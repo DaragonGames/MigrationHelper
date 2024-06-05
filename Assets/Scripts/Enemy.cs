@@ -93,20 +93,35 @@ public class Enemy : MonoBehaviour
     private void RunOutOfPatience()
     {
         speechBubble.SetStatement(responseHandler.farewellsBad);
-        StartCoroutine(DelayedLoadScene(3f,"Home"));
+        StartCoroutine(DelayedLoadScene(3f,"Home",false));
     }
 
     private void RunOutOfDemands()
     {
         GameManager.NextMission();
         speechBubble.SetStatement(responseHandler.farewellsGood);
-        StartCoroutine(DelayedLoadScene(3f,"Home"));
+        StartCoroutine(DelayedLoadScene(3f,"Home",true));
     }
 
-    IEnumerator DelayedLoadScene(float delay, string scene)
+    IEnumerator DelayedLoadScene(float delay, string scene, bool succes)
     {
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(scene);
+        if (succes)
+        {
+            if (GameManager.Instance.gameOver)
+            {
+                TransitionScene.Load("GotPermitText",scene);
+            }
+            else
+            {
+                TransitionScene.Load("DoneRegistrationText",scene);
+            }
+        }
+        else
+        {
+            TransitionScene.Load("SentHomeText",scene);
+        }        
     }
 
 }
