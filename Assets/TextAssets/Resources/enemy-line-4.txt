@@ -1,2 +1,1 @@
-Show me your #item next.
-
+Show me your #item next, please.

@@ -1,1 +1,1 @@
-This is a description for the item.
+This is the main form for the registration of residence. It's sometimes called Meldeschein.
