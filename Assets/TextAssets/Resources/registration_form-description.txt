@@ -1,1 +1,1 @@
-This is the main form for the registration of residence. It's sometimes called Meldeschein.
+This is the main form for the registration of residence. It's the Anmeldeformular.
