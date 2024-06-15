@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
 {
     public static Enemy Instance;
     public SpeechBubble speechBubble;
-    public Image patienceBar;
+    public RectTransform patienceBar;
     private float patience = 100;
     private string currentDemand = "";
     private List<string> demands;
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        patienceBar.rectTransform.sizeDelta = new Vector2(patience*10,20);
+        patienceBar.sizeDelta = new Vector2(40,(100-patience)*1.44f);
     }
 
     private void DemandSomething() 
@@ -81,7 +81,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            patience-=30;
+            patience-=35;
             if (patience <= 0)
             {
                 RunOutOfPatience();

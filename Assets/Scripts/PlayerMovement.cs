@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     {
         GameManager.player = gameObject;
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
