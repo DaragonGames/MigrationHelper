@@ -5,16 +5,16 @@ using UnityEngine;
 public class TextHandler : MonoBehaviour
 {
     public static Dictionary<string, string> englishItemNames = new Dictionary<string, string>(){
-        {"registration_form","registration form for registration of residence"},
-        {"passport","passport"},
-        {"visa","visa"},
-        {"rental_confirmation_letter","rental confirmation letter"},
-        {"application_form","application for a residence permit form"},
-        {"biometric_photo","biometric photo"},
-        {"certificate_of_enrollment","certificate of enrollment"},
-        {"livelihood_proof","proof of financial stability"},
-        {"health_insurance_proof","proof of health insurance"},
-        {"rental_agreement","rental agreement"}
+        {"registration_form","Form for registration of residence"},
+        {"passport","Passport"},
+        {"visa","Visa"},
+        {"rental_confirmation_letter","Rental confirmation letter"},
+        {"application_form","Application for a residence permit"},
+        {"biometric_photo","Biometric photo"},
+        {"certificate_of_enrollment","Certificate of enrollment"},
+        {"livelihood_proof","Proof of financial stability"},
+        {"health_insurance_proof","Proof of health insurance"},
+        {"rental_agreement","Rental agreement"}
     };
 
     public static Dictionary<string, string> germanItemNames = new Dictionary<string, string>(){
@@ -22,7 +22,7 @@ public class TextHandler : MonoBehaviour
         {"passport","Reisepass"},
         {"visa","gültiges Visum"},
         {"rental_confirmation_letter","Wohnungsgeberbestätigung"},
-        {"application_form","Antrag Aufenthaltserlaubnis"},
+        {"application_form","Antrag auf Aufenthaltserlaubnis"},
         {"biometric_photo","biometrisches Passfoto"},
         {"certificate_of_enrollment","Immatrikulationsbescheinigung "},
         {"livelihood_proof","Nachweise bezüglich der Sicherstellung des Lebensunterhaltes"},
