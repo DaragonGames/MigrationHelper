@@ -43,7 +43,7 @@ public class Enemy : MonoBehaviour
     {
         string item;
         string sentence;
-        if (Random.value < 0.2f)
+        if (Random.value < -0.2f)
         {
             item=TextHandler.englishItemNames[currentDemand];
         }
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void RunOutOfPatience()
+    public void RunOutOfPatience()
     {
         speechBubble.SetStatement(responseHandler.farewellsBad);
         StartCoroutine(DelayedLoadScene(3f,"Home",false));

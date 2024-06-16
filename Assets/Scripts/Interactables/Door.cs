@@ -31,7 +31,7 @@ public class Door : Interactable
         }
         else
         {
-            CreatePopUpMessage("There is no Mail");
+            CreatePopUpMessage("There is no mail");
         }
         doorUI.SetActive(false);
     } 
