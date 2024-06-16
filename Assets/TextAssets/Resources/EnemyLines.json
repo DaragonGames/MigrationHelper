@@ -10,11 +10,11 @@
         "Show me your #item next."
     ],
     "commonResponsesRight":[
-        "Great",
-        "Thanks"
+        "Great.",
+        "Thanks."
     ],
     "commonResponsesWrong":[
-        "Nope, that's not it",
+        "Nope, that's not it.",
         "Sorry, but please give me the correct document."
     ],
     "uniqueResponses":[
