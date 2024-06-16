@@ -1,11 +1,11 @@
 {
     "introduction":"Hallo, let's start.",
-    "farewellsGood":"Perfect that will be all.",
-    "farewellsBad":"Please come again when you are prepared.",
+    "farewellsGood":"Perfect, that will be all.",
+    "farewellsBad":"Please come again when you are better prepared.",
     "demandLines":[
-        "To continue I need #item from you.",
+        "To continue I need your #item please.",
         "Please provide me with your #item next.",
-        "Okay, how about #item next.",
+        "Okay, how about #item next?",
         "Do you have your #item ready?",
         "Show me your #item next."
     ],
@@ -14,11 +14,11 @@
         "Thanks"
     ],
     "commonResponsesWrong":[
-        "Not thats not it",
-        "Are you stupid or something?"
+        "Nope, that's not it",
+        "Sorry, but please give me the correct document."
     ],
     "uniqueResponses":[
-        {"line":"almost there","wantedItem":"passport","givenItem":"visa","patienceCostFactor":1.0},
-        {"line":"yeah a common mistake","wantedItem":"visa","givenItem":"passport","patienceCostFactor":1.0}
+        {"line":"That's almost correct.","wantedItem":"passport","givenItem":"visa","patienceCostFactor":1.0},
+        {"line":"Yeah, a common mistake. But I need your visa instead.","wantedItem":"visa","givenItem":"passport","patienceCostFactor":1.0}
     ]
 }
