@@ -21,13 +21,13 @@ public class PopUpText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float ygoal = 150*(counter-positionID);
+        float ygoal = (Screen.height/1080f)*150*(counter-positionID);
         if (transform.position.y < ygoal)
         {
             transform.position += Vector3.up * Time.deltaTime * 450;
             if (transform.position.y > ygoal)
             {
-                transform.position = new Vector3(960,ygoal,0);
+                transform.position = new Vector3(Screen.width/2,ygoal,0);
             }
         }
     }
