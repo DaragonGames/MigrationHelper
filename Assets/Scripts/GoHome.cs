@@ -6,6 +6,6 @@ public class GoHome : MonoBehaviour
 {
     public void GoHomeClick()
     {
-        Enemy.Instance.RunOutOfPatience();
+        Enemy.Instance.GoHome();
     }
 }

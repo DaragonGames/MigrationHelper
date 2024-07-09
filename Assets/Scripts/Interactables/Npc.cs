@@ -10,7 +10,7 @@ public class Npc : Interactable
     {
         if (!speechBubble.activeSelf)
         {
-            string sentence = TextHandler.npcLines[Random.Range(0,3)];
+            string sentence = TextHandler.npcLines[Random.Range(0,TextHandler.npcLines.Count)];
             speechBubble.GetComponentInChildren<SpeechBubble>().SetStatement(sentence);
             speechBubble.SetActive(true);
             StartCoroutine(CloseText());

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -11,7 +12,7 @@ public class Inventory : MonoBehaviour
     public TMP_Text itemDescription;
     public Sprite selectedSprite;
     public static List<String> items = new List<String>(){ "visa", "passport"};
-    private string selectedItem ="";
+    public string selectedItem ="";
     public void ToggleUI() 
     {
         gameObject.SetActive(!gameObject.activeSelf);
@@ -71,6 +72,7 @@ public class Inventory : MonoBehaviour
     public void ClickOutsideTheWindow()
     {
         selectedItem = "";
+        ResetInfo();
     }
 
     public void SetInfo()

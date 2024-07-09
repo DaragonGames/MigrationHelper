@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private string currentDemand = "";
     private List<string> demands;
     private EnemyLines responseHandler;
+    private bool unreactiv = false;
 
     void Start()
     {
@@ -58,12 +59,18 @@ public class Enemy : MonoBehaviour
 
     IEnumerator DelayedDemandSomething(float delay)
     {
+        unreactiv = true;
         yield return new WaitForSeconds(delay);
+        unreactiv = false;
         DemandSomething();
     }
 
     public void Receive(string item) 
     {
+        if (unreactiv)
+        {
+            return;
+        }
         string response = responseHandler.GetResponse(currentDemand,item);
         speechBubble.SetStatement(response);
         if (currentDemand == item)
@@ -71,7 +78,7 @@ public class Enemy : MonoBehaviour
             demands.Remove(item);
             if (demands.Count == 0)
             {
-                RunOutOfDemands();
+                StartCoroutine(RunOutOfDemands());
             }
             else {
                 int randomValue = Random.Range(0,demands.Count);
@@ -84,20 +91,27 @@ public class Enemy : MonoBehaviour
             patience-=35;
             if (patience <= 0)
             {
-                RunOutOfPatience();
+                StartCoroutine(RunOutOfPatience());
             }
-            StartCoroutine(DelayedDemandSomething(3f));
+            else
+            {
+                StartCoroutine(DelayedDemandSomething(3f));
+            }            
         }
     }
 
-    public void RunOutOfPatience()
+    IEnumerator RunOutOfPatience()
     {
+        unreactiv = true;
+        yield return new WaitForSeconds(0);        
         speechBubble.SetStatement(responseHandler.farewellsBad);
         StartCoroutine(DelayedLoadScene(3f,"Home",false));
     }
 
-    private void RunOutOfDemands()
+    IEnumerator RunOutOfDemands()
     {
+        unreactiv = true;
+        yield return new WaitForSeconds(0);        
         GameManager.NextMission();
         speechBubble.SetStatement(responseHandler.farewellsGood);
         StartCoroutine(DelayedLoadScene(3f,"Home",true));
@@ -122,6 +136,12 @@ public class Enemy : MonoBehaviour
         {
             TransitionScene.Load("SentHomeText",scene);
         }        
+    }
+
+    public void GoHome()
+    {
+        patience = 5;
+        StartCoroutine(RunOutOfPatience());
     }
 
 }

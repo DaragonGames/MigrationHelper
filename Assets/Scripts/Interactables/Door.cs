@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,11 @@ public class Door : Interactable
 
     void Update()
     {
+        if (doorUI.activeSelf && Input.GetMouseButtonUp(0)&& !selected)
+        {
+            StartCoroutine(delayedDeactivation());
+        }
+        
         base.Update();
 
         Vector3 positionUsed = new Vector3(transform.position.x,0,transform.position.z);
@@ -20,6 +26,9 @@ public class Door : Interactable
         {
             doorUI.SetActive(false);
         }
+
+
+
     }
 
     public void GetPost()
@@ -52,5 +61,11 @@ public class Door : Interactable
     {
         doorUI.SetActive(false);
         SceneManager.LoadScene("Office");
+    }
+
+    IEnumerator delayedDeactivation()
+    {
+        yield return new WaitForSeconds(0.05f);
+        doorUI.SetActive(false);
     }
 }

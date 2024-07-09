@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 250}
+  m_AnchoredPosition: {x: 0, y: 380}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &317600806
@@ -238,8 +238,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 38c5708a35e68494b887236bb94b2d6e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -438,8 +438,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278231302
-  m_fontColor: {r: 0.024931338, g: 0.6320754, b: 0, a: 1}
+    rgba: 4278235703
+  m_fontColor: {r: 0.21568629, g: 0.69803923, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -456,8 +456,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -713,6 +713,7 @@ MonoBehaviour:
     commonResponsesRight: []
     commonResponsesWrong: []
     uniqueResponses: []
+  gameOver: 0
 --- !u!114 &1491937851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,8 +814,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Migration Helper
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: fc5c67c9a30f32744be38f2bd7c4daa4, type: 2}
-  m_sharedMaterial: {fileID: 8607574196241096845, guid: fc5c67c9a30f32744be38f2bd7c4daa4,
+  m_fontAsset: {fileID: 11400000, guid: 70c2a395f692ed14fb693fad7f243e60, type: 2}
+  m_sharedMaterial: {fileID: -8304173880351452408, guid: 70c2a395f692ed14fb693fad7f243e60,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -839,8 +840,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
-  m_fontSizeBase: 100
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

@@ -6,11 +6,13 @@ public class CollectableItem : Interactable
 {
     public string itemName;
     public bool isContainer;
+    public GameObject glow;
 
     void Start()
     {
         if (Inventory.items.Contains(itemName) && !isContainer)
         {
+            Destroy(glow);
             Destroy(gameObject);
         }
     }
@@ -20,6 +22,7 @@ public class CollectableItem : Interactable
         CollectItem(itemName, transform.position);
         if (!isContainer)
         {
+            Destroy(glow);
             Destroy(gameObject);
         }
     }

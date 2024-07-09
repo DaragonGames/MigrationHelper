@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class Interactable : MonoBehaviour
 {
-    private bool selected;
+    protected bool selected;
     public float reach = 1;
 
     public GameObject collectEffectPrefab;

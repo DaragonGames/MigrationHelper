@@ -21,24 +21,25 @@ public class TextHandler : MonoBehaviour
         {"registration_form","Anmeldeformular für die Wohnungsanmeldung"},
         {"passport","Reisepass"},
         {"visa","gültiges Visum"},
-        {"rental_confirmation_letter","Wohnungsgeberbestätigung"},
+        {"rental_confirmation_letter","Wohnungsgeber\u00ADbestätigung"},
         {"application_form","Antrag auf Aufenthaltserlaubnis"},
         {"biometric_photo","biometrisches Passfoto"},
-        {"certificate_of_enrollment","Immatrikulationsbescheinigung "},
+        {"certificate_of_enrollment","Immatrikulations\u00ADbescheinigung "},
         {"livelihood_proof","Nachweise bezüglich der Sicherstellung des Lebensunterhaltes"},
-        {"health_insurance_proof","Nachweis über einen Krankenversicherungsschutz"},
+        {"health_insurance_proof","Nachweis über einen Kranken\u00ADversicherungs\u00ADschutz"},
         {"rental_agreement","Mietvertrag"}
     };
 
     public static Dictionary<string, string> itemDescriptions = new Dictionary<string, string>();
     public static List<string> npcLines = new List<string>();
-    public static int npcLinesCount = 4;
+    private static int npcLinesCount = 13;
 
     public static void LoadTexts()
     {
         foreach (string name in GameManager.allItemNames)
         {
             string text = Resources.Load<TextAsset>(name+"-description").text;
+            text = text.Replace("#lb", "\u00AD");
             itemDescriptions.Add(name, text);
         }
         Debug.Log("Done loading item Descriptions");
