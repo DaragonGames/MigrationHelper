@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public EnemyLines responseHandler = null;
 
     public bool gameOver = false;
+    public bool OnScreen = false;
 
     void Awake()
     {

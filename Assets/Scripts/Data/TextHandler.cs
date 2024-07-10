@@ -47,6 +47,7 @@ public class TextHandler : MonoBehaviour
         for (int i = 0;i < npcLinesCount; i++)
         {
             string text = Resources.Load<TextAsset>("npc-line-"+i).text;
+            text = text.Replace("#lb", "\u00AD");
             npcLines.Add(text);
         }
         Debug.Log("Done loading npc lines");

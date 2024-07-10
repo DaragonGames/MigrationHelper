@@ -20,6 +20,7 @@ public class ItemCollectEffect : MonoBehaviour
 
     public void SetPosition(Vector3 pos, string itemName)
     {
+        goal = new Vector3 (120, 760, 5)* (Screen.height/1080f);
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(pos);
         transform.GetChild(0).position = screenPoint;
         transform.GetChild(0).GetComponent<Image>().sprite = ItemSpriteManager.list[itemName];
